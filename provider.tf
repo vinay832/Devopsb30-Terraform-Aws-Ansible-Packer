@@ -14,3 +14,8 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
+# https://medium.com/scalereal/how-to-use-multiple-aws-providers-in-a-terraform-project-672da074c3eb
+provider "aws" {
+  alias  = "ohio"
+  region = "us-east-2"
+}

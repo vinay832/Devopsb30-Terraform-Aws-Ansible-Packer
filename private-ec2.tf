@@ -1,5 +1,9 @@
+locals {
+  newenv = lower(var.environment)
+}
 resource "aws_instance" "private_servers" {
-  count                  = 3
+  //count                  = 3
+  count                  = local.newenv == "dev" ? 3 : 1
   ami                    = lookup(var.ami, var.aws_region)
   instance_type          = var.instance_type
   key_name               = var.key_name

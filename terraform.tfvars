@@ -1,7 +1,7 @@
 aws_region    = "us-east-1"
 vpc_cidr      = "10.33.0.0/16"
 vpc_name      = "dev30-func"
-key_name      = "Z_AWSB7"
+key_name      = "DeleteLater"
 azs           = ["us-east-1a", "us-east-1b", "us-east-1c"]
 environment   = "dev"
 instance_type = "t2.micro"

@@ -10,5 +10,5 @@ resource "aws_nat_gateway" "nat-gw" {
   tags = {
     Name = "nat-gw"
   }
-  depends_on = [aws_internet_gateway.default, aws_s3_bucket.devopsb30testbuk007]
+  depends_on = [aws_internet_gateway.default]
 }

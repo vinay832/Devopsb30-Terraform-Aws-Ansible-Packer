@@ -1,0 +1,20 @@
+---
+- name: Creating Admin Users For Ubuntu Servers
+  hosts: pvt
+  gather_facts: yes
+  become: yes
+  become_user: root
+  vars: 
+    os1family: "Debian"
+    os2family: "RedHat"
+  tasks:
+  - name: Create adminuser1
+    user:
+      name: "{{item}}"
+      state: "present"
+      shell: /bin/bash
+    with_items:
+    - adminuser1
+    - adminuser2
+    - adminuser3
+    when: ansible_os_family == "{{ os1family }}" and ansible_distribution_major_version == "200"

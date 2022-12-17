@@ -15,20 +15,21 @@
   serial: 1
   vars:
    newhost: "{{ ansible_facts['hostname']}}"
+   nodename: "{{ ansible_facts['nodename']}}"
   tasks:
   - name: Generate Random
     shell: date +%s
     register: rannumber
   - debug:
       var: rannumber.stdout
-  - name: ansible copy file from remote to local.
-    fetch:
-     src: /etc/hostname
-     dest: /tmp/hostname{{ rannumber.stdout }}
-     flat: yes
-  - name: ansible copy file from remote to local with ansible_fact_hostname.
-    fetch:
-     src: /etc/hostname
-     dest: /tmp/{{newhost}}
-     flat: yes
-     #Will Download file only but dont create the client folder and path
+  # - name: ansible copy file from remote to local.
+  #   fetch:
+  #    src: /etc/hostname
+  #    dest: /tmp/hostname{{ rannumber.stdout }}
+  #    flat: yes
+  # - name: ansible copy file from remote to local with ansible_fact_hostname.
+  #   fetch:
+  #    src: /etc/hostname
+  #    dest: /tmp/{{newhost}}
+  #    flat: yes
+  #    #Will Download file only but dont create the client folder and path

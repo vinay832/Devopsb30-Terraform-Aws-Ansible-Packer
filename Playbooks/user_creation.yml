@@ -8,7 +8,7 @@
     os1family: "Debian"
     os2family: "RedHat"
   tasks:
-  - name: Create adminuser1
+  - name: Create adminusers
     user:
       name: "{{item}}"
       state: "present"
@@ -17,4 +17,4 @@
     - adminuser1
     - adminuser2
     - adminuser3
-    when: ansible_os_family == "{{ os1family }}" and ansible_distribution_major_version == "200"
+    when: ansible_os_family == "{{ os1family }}" and ansible_distribution_version == "20.04"

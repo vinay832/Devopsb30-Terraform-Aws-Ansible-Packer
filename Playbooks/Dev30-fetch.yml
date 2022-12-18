@@ -27,9 +27,9 @@
      src: /etc/hostname
      dest: /tmp/hostname{{ rannumber.stdout }}
      flat: yes
-  - name: ansible copy file from remote to local with ansible_fact_hostname.
-    fetch:
-     src: /etc/hostname
-     dest: /tmp/{{newhost}}
-     flat: yes
+  # - name: ansible copy file from remote to local with ansible_fact_hostname.
+  #   fetch:
+  #    src: /etc/hostname
+  #    dest: /tmp/{{newhost}}
+  #    flat: yes
      #Will Download file only but dont create the client folder and path

@@ -54,7 +54,7 @@
            groups: root
            shell: /bin/bash
            group: root
-           password: "{{ '%s' | format(user_password) | regex_replace('\n', '') | password_hash('123') }}"
+           password: "{{ '%s' | format(user_password) | regex_replace('\n', '') | password_hash('sha512') }}"
            password_expire_min: 1
        - name: Check S3 Buckets
          shell: aws s3 ls

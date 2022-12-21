@@ -1,0 +1,21 @@
+---
+- hosts: pvt
+  gather_facts: yes
+  become: yes
+  become_user: root
+  tasks:
+  - name: Print inventory_hostname
+    ansible.builtin.debug:
+      msg: "{{ inventory_hostname }}"
+
+  - name: Change Hostname on /etc/hostname
+    lineinfile:
+     path: /etc/hostname
+     regexp: '^ip'
+     line: "{{ inventory_hostname }}"
+
+  - name: Print Hostname
+    shell: cat /etc/hostname
+    register: newname
+  - debug:
+      var: newname.stdout   

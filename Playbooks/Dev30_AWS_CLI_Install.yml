@@ -1,0 +1,27 @@
+---
+- hosts: pvt
+  gather_facts: yes
+  become: yes
+  become_user: root
+  tasks:
+  - name: Perform apt update
+    shell: apt update
+  - name: Check if Unzip Exists
+    shell: unzip
+    register: current_version
+    ignore_errors: True
+  - name: Install UNZIP
+    apt: >
+      name=unzip
+      state=latest
+    when: (current_version.rc == 127) or (current_version.rc != 0)
+  - name: Check if AWS Exists
+    shell: aws
+    register: current_version
+    ignore_errors: True
+  - name: Install AWS
+    shell: |
+       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+       unzip awscliv2.zip
+       sudo ./aws/install
+    when: (current_version.rc == 127) or (current_version.rc != 0)

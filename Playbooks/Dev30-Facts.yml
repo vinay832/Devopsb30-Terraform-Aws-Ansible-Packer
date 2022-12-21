@@ -30,4 +30,4 @@
   - name: os_family Facts
     ansible.builtin.debug:
       msg: "{{ os_family }}"
-      no_log: True
+      #no_log: True

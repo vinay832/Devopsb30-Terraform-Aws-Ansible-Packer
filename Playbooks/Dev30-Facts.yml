@@ -17,17 +17,16 @@
   - name: ip_address Facts
     ansible.builtin.debug:
       msg: "{{ ip_address }}"
-      no_log: True
 
   - name: host_name Facts
     ansible.builtin.debug:
       msg: "{{ host_name }}"
-      no_log: True
+
   - name: fqdn_name Facts
     ansible.builtin.debug:
       msg: "{{ fqdn_name }}"
-      no_log: True
+     
   - name: os_family Facts
     ansible.builtin.debug:
       msg: "{{ os_family }}"
-      no_log: True
+     

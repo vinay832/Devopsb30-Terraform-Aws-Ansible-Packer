@@ -1,18 +1,18 @@
 [allservers]
-testserver01 ansible_port=22 ansible_host=44.210.114.55  ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem 
-testserver02 ansible_port=22 ansible_host=3.90.202.102 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
-testserver03 ansible_port=22 ansible_host=54.145.44.62 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+testserver01 ansible_port=22 ansible_host=54.210.165.153  ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem 
+testserver02 ansible_port=22 ansible_host=54.88.126.103 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+testserver03 ansible_port=22 ansible_host=3.89.69.172 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
 
 [pvt]
-pvttestserver01 ansible_port=22 ansible_host=10.21.1.113 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
-pvttestserver02 ansible_port=22 ansible_host=10.21.2.17 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
-pvttestserver03 ansible_port=22 ansible_host=10.21.3.69 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+pvttestserver01 ansible_port=22 ansible_host=10.21.1.51 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+pvttestserver02 ansible_port=22 ansible_host=10.21.2.200 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+pvttestserver03 ansible_port=22 ansible_host=10.21.3.243 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
 
 [webservers]
-testserver01 ansible_port=22 ansible_host=44.210.114.55 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+testserver01 ansible_port=22 ansible_host=54.210.165.153 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
 
 [appservers]
-testserver02 ansible_port=22 ansible_host=3.90.202.102 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+testserver02 ansible_port=22 ansible_host=54.88.126.103 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
 
 [dbservers]
-testserver03 ansible_port=22 ansible_host=54.145.44.62 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem
+testserver03 ansible_port=22 ansible_host=3.89.69.172 ansible_user=ansibleadmin ansible_ssh_private_key_file=/home/ansibleadmin/.ssh/ansiblekey.pem

@@ -19,3 +19,20 @@
     register: newname
   - debug:
       var: newname.stdout   
+      
+  - name: Delete Matched Lines
+    lineinfile:
+      path: /etc/hosts
+      regexp: "^#" #This will delete lines which are starting with #(hash)
+      state: absent
+
+    #https://www.middlewareinventory.com/blog/ansible-lineinfile-multiple-lines-replace-multiple-lines/
+  - name: Delete Multiple Matched Lines
+    lineinfile:
+      path: /etc/hosts
+      regexp: '{{item.From}}'
+      line: '{{item.To}}'
+      state: absent
+    with_items:
+    - { From: '^10', To: '^#Hostfile'}
+    - { From: '^Hostfile', To: '^Hostfile'}

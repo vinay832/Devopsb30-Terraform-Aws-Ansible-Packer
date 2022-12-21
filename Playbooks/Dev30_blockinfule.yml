@@ -1,0 +1,16 @@
+---
+- hosts: pvt
+  gather_facts: yes
+  become: yes
+  become_user: root
+  vars:
+   ip_address: "{{ ansible_facts['eth0']['ipv4']['address'] }}"
+  tasks:
+  - name: Add Host Entries For /etc/hosts
+    blockinfile:
+      backup: true
+      path: /etc/hosts
+      insertafter: '127.0.0.1 localhost'
+      marker: "#Hostfile Updated By Ansibleadmin"       
+      block: |
+       {{ ip_address}} {{ inventory_hostname }} {{ inventory_hostname }}.local

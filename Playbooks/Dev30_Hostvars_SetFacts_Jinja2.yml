@@ -1,0 +1,21 @@
+---
+- hosts:
+  - pvttestserver01
+  - pvttestserver02
+  - pvttestserver03
+  gather_facts: yes
+  become: yes
+  become_user: root
+  tasks:
+  - name: SetFacts
+    set_fact:
+      host_name: "{{ ansible_facts['hostname'] }}"
+      ip_address: "{{ ansible_facts['eth0']['ipv4']['address'] }}"
+    
+  - name: Copy Hostfile to Servers
+    template: >
+       src=hosts.j2
+       dest=/etc/hosts
+       owner=root
+       group=root
+       mode=0644

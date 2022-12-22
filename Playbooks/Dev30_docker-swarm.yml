@@ -132,7 +132,7 @@
         shell: docker service rm nginx001 
         ignore_errors: yes
       - name: Deploy Sample Application
-        shell: docker service create --name nginx001 -p 8000:80 --replicas 6 vinayk/testcontainer:v1
+        shell: docker service create --name nginx001 -p 8000:80 --replicas 6 sreeharshav/testcontainer:v1
         ignore_errors: yes
       - name: Validate Deployment
         shell: sleep 60 && curl http://"{{ private_ip.stdout }}":8000

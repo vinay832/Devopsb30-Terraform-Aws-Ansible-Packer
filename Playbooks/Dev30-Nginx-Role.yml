@@ -3,4 +3,4 @@
     hosts: pvt
     roles:
      - nginxinstall
-    
+     - sreeveerdevops.custom_nginx

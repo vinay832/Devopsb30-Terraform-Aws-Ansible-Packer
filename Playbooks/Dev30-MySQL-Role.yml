@@ -1,0 +1,6 @@
+---
+- name: Installing mysql on ubuntu using ansible role
+  hosts: pvt
+  become: yes
+  roles:
+    - { role: geerlingguy.mysql }
